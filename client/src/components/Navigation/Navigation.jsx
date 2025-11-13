@@ -29,16 +29,15 @@ const COMMON_NAV_ITEMS = [
   { path: '/catalogo-pdfs', label: 'Catálogos', icon: FileText },
 ];
 
-
 // Rutas específicas para usuarios autenticados (no admin)
 const USER_NAV_ITEMS = [
-  { path: '/cotizaciones', label: 'Cotizaciones', icon: Handshake }, //
+  { path: '/cotizaciones', label: 'Cotizaciones', icon: Handshake },
 ];
 
 // Rutas específicas para un usuario Administrador (Admin)
 const ADMIN_NAV_ITEMS = [
   { path: '/admin/products', label: 'Admin Productos', icon: LayoutDashboard },
-  { path: '/admin/quotations', label: 'Gestionar Cotizaciones', icon: ListChecks }, // 
+  { path: '/admin/quotations', label: 'Gestionar Cotizaciones', icon: ListChecks },
   { path: '/admin/manage', label: 'Administración General', icon: Settings },
 ];
 
@@ -55,6 +54,10 @@ const Navigation = ({
 }) => {
   const commonClasses = 'font-medium transition-all duration-300 relative group';
   const desktopClasses = 'text-white hover:text-white/90 whitespace-nowrap';
+
+  // 🟢 DEFINICIÓN DE COLORES BASE VERDE
+  const primaryColor = 'text-emerald-400';
+  const primaryHover = 'bg-emerald-500/10 hover:text-white';
 
   // Determina la lista completa de enlaces para la vista móvil/tablet
   let allNavItems = [...COMMON_NAV_ITEMS];
@@ -82,7 +85,7 @@ const Navigation = ({
             className={({ isActive }) =>
               `flex items-center gap-3 px-3 py-2 rounded-lg transition-all ${
                 isActive
-                  ? 'bg-white/10 text-[#ED0000]'
+                  ? 'bg-white/10 text-emerald-300'
                   : 'text-white/80 hover:bg-white/5 hover:text-white'
               }`
             }
@@ -143,12 +146,13 @@ const Navigation = ({
           to={path}
           className={({ isActive }) =>
             `${commonClasses} ${desktopClasses} ${
-              isActive ? 'text-white font-semibold' : ''
+              isActive ? 'text-emerald-300 font-semibold' : ''
             }`
           }
         >
           {label}
-          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#ED0000] transition-all duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
+          {/* 🟢 Barra inferior de acento */}
+          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-emerald-400 transition-all duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
         </NavLink>
       ))}
 
@@ -160,13 +164,14 @@ const Navigation = ({
             key={path}
             to={path}
             className={({ isActive }) =>
-              `${commonClasses} ${desktopClasses} text-indigo-300 hover:text-indigo-100 ${
+              `${commonClasses} ${desktopClasses} text-lime-300 hover:text-lime-100 ${
                 isActive ? 'font-semibold' : ''
               }`
             }
           >
             {label}
-            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-indigo-400 transition-all duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
+            {/* 🟢 Barra inferior de acento (verde lima) */}
+            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-lime-400 transition-all duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
           </NavLink>
         ))}
 
@@ -185,6 +190,7 @@ const Navigation = ({
               }
             >
               {label}
+              {/* 🟡 Barra inferior amarilla para diferenciar admin */}
               <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-yellow-400 transition-all duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
             </NavLink>
           ))}
