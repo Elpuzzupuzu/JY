@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // 💡 IMPORTANTE: Importa el archivo de sonido directamente
 // Asegúrate de que la ruta sea correcta a tu archivo dentro de 'src/assets'
-import notificationSound from '../../assets/sounds/sound-5.mp3'; 
+import notificationSound from '../../assets/sounds/paid.mp3'; 
 
 
 /**

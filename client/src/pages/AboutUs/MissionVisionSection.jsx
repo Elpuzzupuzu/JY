@@ -2,14 +2,17 @@ import React from 'react';
 import ValueCard from './ValueCard';
 
 const MissionVisionSection = ({ values, getAnimationClass, AwardIcon, TrendingUpIcon, StarIcon, CheckCircleIcon }) => (
-    // 1. Fondo en Azul Marino Profundo (Seriedad y Confianza)
-    <section className="py-20 px-6 bg-gradient-to-br from-[#1E3A8A] to-[#3B82F6] text-white relative overflow-hidden">
-        {/* Elementos de fondo borrosos para dar profundidad, usando blanco y el azul de acento */}
+    // 1. Fondo en Negro Carbón Profundo (Seriedad + Tecnología Deportiva)
+    // El degradado usa tonos muy oscuros para mantener la atención en las cards verdes.
+    <section className="py-20 px-6 bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden">
+        
+        {/* Elementos de fondo borrosos para dar profundidad, usando el Verde Deportivo */}
         <div className="absolute inset-0 opacity-10">
-            {/* Usamos el azul de acento para los blurs */}
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#60A5FA] rounded-full blur-3xl"></div> 
-            <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-[#1E3A8A] rounded-full blur-3xl"></div>
+            {/* Usamos el verde de acento para los blurs */}
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-500 rounded-full blur-3xl"></div> 
+            <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-lime-400 rounded-full blur-3xl"></div>
         </div>
+
         <div className="max-w-6xl mx-auto relative z-10">
             {/* Título de la Sección */}
             <div 
@@ -17,90 +20,94 @@ const MissionVisionSection = ({ values, getAnimationClass, AwardIcon, TrendingUp
                 data-animate
                 id="mission"
             >
-                <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">
-                    Misión & Visión
+                {/* Título: Alto contraste en blanco, negrita extrema */}
+                <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter uppercase">
+                    Misión & <span className="text-green-400">Visión</span>
                 </h2>
-                {/* Separador elegante en Blanco para alto contraste */}
-                <div className="w-20 h-1 bg-white mx-auto mb-6 rounded-full opacity-90"></div>
+                {/* Separador elegante en Verde Deportivo para alto contraste */}
+                <div className="w-20 h-1 bg-green-500 mx-auto mb-6 rounded-full opacity-90"></div>
                 {/* Párrafo: Opacidad ajustada para legibilidad perfecta */}
-                <p className="text-white/95 text-xl max-w-3xl mx-auto leading-relaxed">
-                    Los pilares que guían nuestro compromiso con la excelencia.
+                <p className="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed font-light">
+                    Los pilares que guían nuestro compromiso con la excelencia, el rendimiento y la superación constante.
                 </p>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                {/* Mission Card (Fondo blanco translúcido sobre azul) */}
+                
+                {/* Mission Card (Efecto cristal sobre fondo oscuro, borde de impacto verde) */}
                 <div 
-                    className={`bg-white/20 backdrop-blur-sm rounded-3xl p-10 border border-white/20 hover:border-[#60A5FA] transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/60 ${getAnimationClass('missionCard', 'scale-in')}`}
+                    className={`bg-white/5 backdrop-blur-md rounded-3xl p-10 border border-white/10 hover:border-green-500 transition-all duration-300 hover:shadow-2xl hover:shadow-green-800/50 transform hover:scale-[1.01] ${getAnimationClass('missionCard', 'scale-in')}`}
                     data-animate
                     id="missionCard"
                 >
                     <div className="flex items-center mb-8">
-                        {/* Ícono consistente con el azul de acento */}
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#60A5FA] to-[#3B82F6] rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                        {/* Ícono: Degradado Verde Atlétio */}
+                        <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-lime-400 rounded-2xl flex items-center justify-center mr-6 shadow-xl flex-shrink-0">
                             <AwardIcon className="w-8 h-8 text-white" />
                         </div>
-                        <h3 className="text-3xl font-bold">Nuestra Misión</h3>
+                        <h3 className="text-3xl font-extrabold uppercase text-white tracking-tight">Misión</h3>
                     </div>
                     {/* Texto con alta opacidad para legibilidad */}
-                    <p className="text-white leading-relaxed text-lg mb-6">
-                        Ofrecer soluciones hidráulicas de vanguardia, superando las expectativas de nuestros clientes con productos de calidad, servicio confiable e innovación continua, contribuyendo al desarrollo sostenible de nuestras comunidades.
+                    <p className="text-gray-200 leading-relaxed text-lg mb-6">
+                        Impulsar el rendimiento de atletas y entusiastas con productos de la más alta calidad y tecnología, fomentando una cultura de superación y vida activa en todas las comunidades.
                     </p>
-                    {/* Lista de Puntos: Azul claro (Acción/Proceso) */}
+                    
+                    {/* Lista de Puntos: Verde Lima/Neón (Acción/Proceso) */}
                     <div className="grid grid-cols-2 gap-4 text-sm">
                         <div className="flex items-center">
-                            <CheckCircleIcon className="w-4 h-4 text-[#60A5FA] mr-2" />
-                            <span className="font-medium">Calidad Premium</span>
+                            <CheckCircleIcon className="w-4 h-4 text-lime-400 mr-2 flex-shrink-0" />
+                            <span className="font-semibold text-gray-100">Calidad Superior</span>
                         </div>
                         <div className="flex items-center">
-                            <CheckCircleIcon className="w-4 h-4 text-[#60A5FA] mr-2" />
-                            <span className="font-medium">Servicio Confiable</span>
+                            <CheckCircleIcon className="w-4 h-4 text-lime-400 mr-2 flex-shrink-0" />
+                            <span className="font-semibold text-gray-100">Tecnología Avanzada</span>
                         </div>
                         <div className="flex items-center">
-                            <CheckCircleIcon className="w-4 h-4 text-[#60A5FA] mr-2" />
-                            <span className="font-medium">Innovación Continua</span>
+                            <CheckCircleIcon className="w-4 h-4 text-lime-400 mr-2 flex-shrink-0" />
+                            <span className="font-semibold text-gray-100">Rendimiento Máximo</span>
                         </div>
                         <div className="flex items-center">
-                            <CheckCircleIcon className="w-4 h-4 text-[#60A5FA] mr-2" />
-                            <span className="font-medium">Desarrollo Sostenible</span>
+                            <CheckCircleIcon className="w-4 h-4 text-lime-400 mr-2 flex-shrink-0" />
+                            <span className="font-semibold text-gray-100">Comunidad Activa</span>
                         </div>
                     </div>
                 </div>
                 
-                {/* Vision Card (Fondo blanco translúcido sobre azul) */}
+                {/* Vision Card (Efecto cristal sobre fondo oscuro, borde de impacto verde) */}
                 <div 
-                    className={`bg-white/20 backdrop-blur-sm rounded-3xl p-10 border border-white/20 hover:border-[#60A5FA] transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/60 ${getAnimationClass('visionCard', 'scale-in')}`}
+                    className={`bg-white/5 backdrop-blur-md rounded-3xl p-10 border border-white/10 hover:border-green-500 transition-all duration-300 hover:shadow-2xl hover:shadow-green-800/50 transform hover:scale-[1.01] ${getAnimationClass('visionCard', 'scale-in')}`}
                     data-animate
                     id="visionCard"
                 >
                     <div className="flex items-center mb-8">
-                        {/* Ícono consistente con el azul de acento */}
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#60A5FA] to-[#3B82F6] rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                        {/* Ícono: Degradado Verde Atlétio */}
+                        <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-lime-400 rounded-2xl flex items-center justify-center mr-6 shadow-xl flex-shrink-0">
                             <TrendingUpIcon className="w-8 h-8 text-white" />
                         </div>
-                        <h3 className="text-3xl font-bold">Nuestra Visión</h3>
+                        <h3 className="text-3xl font-extrabold uppercase text-white tracking-tight">Visión</h3>
                     </div>
                     {/* Texto con alta opacidad para legibilidad */}
-                    <p className="text-white leading-relaxed text-lg mb-6">
-                        Ser el líder y referente de la industria hidráulica a nivel nacional, reconocidos por nuestra excelencia, compromiso con la calidad y la capacidad de adaptarnos a las necesidades de un mercado en constante evolución.
+                    <p className="text-gray-200 leading-relaxed text-lg mb-6">
+                        Ser la marca de equipamiento deportivo número uno a nivel global, reconocida por su innovación constante, diseño disruptivo y por inspirar a millones a superar sus límites físicos.
                     </p>
-                    {/* Lista de Puntos: Amarillo (Meta/Logro) */}
+                    
+                    {/* Lista de Puntos: Amarillo Deportivo/Neón (Meta/Logro) */}
                     <div className="grid grid-cols-2 gap-4 text-sm">
                         <div className="flex items-center">
-                            <StarIcon className="w-4 h-4 text-yellow-300 mr-2" />
-                            <span className="font-medium">Liderazgo Nacional</span>
+                            <StarIcon className="w-4 h-4 text-yellow-300 mr-2 flex-shrink-0" />
+                            <span className="font-semibold text-gray-100">Marca Global #1</span>
                         </div>
                         <div className="flex items-center">
-                            <StarIcon className="w-4 h-4 text-yellow-300 mr-2" />
-                            <span className="font-medium">Excelencia Reconocida</span>
+                            <StarIcon className="w-4 h-4 text-yellow-300 mr-2 flex-shrink-0" />
+                            <span className="font-semibold text-gray-100">Innovación Extrema</span>
                         </div>
                         <div className="flex items-center">
-                            <StarIcon className="w-4 h-4 text-yellow-300 mr-2" />
-                            <span className="font-medium">Adaptabilidad</span>
+                            <StarIcon className="w-4 h-4 text-yellow-300 mr-2 flex-shrink-0" />
+                            <span className="font-semibold text-gray-100">Diseño Disruptivo</span>
                         </div>
                         <div className="flex items-center">
-                            <StarIcon className="w-4 h-4 text-yellow-300 mr-2" />
-                            <span className="font-medium">Innovación Constante</span>
+                            <StarIcon className="w-4 h-4 text-yellow-300 mr-2 flex-shrink-0" />
+                            <span className="font-semibold text-gray-100">Inspiración Masiva</span>
                         </div>
                     </div>
                 </div>
@@ -113,13 +120,12 @@ const MissionVisionSection = ({ values, getAnimationClass, AwardIcon, TrendingUp
                 id="values"
             >
                 <div className="text-center mb-12">
-                    <h3 className="text-3xl font-bold mb-4">Nuestros Valores</h3>
-                    {/* Separador usando el Azul de acento */}
-                    <div className="w-16 h-1 bg-[#60A5FA] mx-auto rounded-full"></div>
+                    <h3 className="text-3xl font-black mb-4 uppercase">Nuestros Valores</h3>
+                    {/* Separador usando el Verde de acento */}
+                    <div className="w-16 h-1 bg-green-500 mx-auto rounded-full"></div>
                 </div>
-                {/* La tarjeta ValueCard debe ser ajustada a fondo oscuro */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    {/* Asumiendo que ValueCard está preparado para un fondo oscuro (text-white) */}
+                    {/* NOTA: ValueCard debe usar texto blanco y acentos verdes para este fondo oscuro. */}
                     {values.map((value, index) => (
                         <ValueCard key={index} {...value} />
                     ))}

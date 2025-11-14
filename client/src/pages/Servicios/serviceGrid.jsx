@@ -2,28 +2,40 @@ import ServiceCard from "./serviceCard";
 
 const ServicesGrid = ({ services, isVisible }) => {
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="py-32 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div
-          className={`text-center mb-20 animate-fade-in-up ${
+          className={`mb-24 animate-fade-in-up ${
             isVisible.servicesHeader ? "visible" : ""
           }`}
           data-animate
           id="servicesHeader"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">
-            <span className="gradient-text">Servicios Especializados</span>
+          <div className="space-y-1 mb-8">
+            <span className="text-lime-500 text-xs font-medium tracking-widest uppercase">
+              Rendimiento Profesional
+            </span>
+          </div>
+
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-light leading-none tracking-tight mb-8">
+            <span className="text-gray-900 font-extralight">Equipamiento de </span>
+            <span className="text-gray-900 font-semibold">Élite PRO</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#ED0000] to-[#ff4444] mx-auto mb-6 rounded-full"></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Cada servicio está diseñado para superar tus expectativas con
-            tecnología avanzada y mano de obra especializada
+          
+          <div className="space-y-1 mb-10">
+            <div className="h-px w-20 bg-lime-500"></div>
+            <div className="h-px w-16 bg-gray-300"></div>
+          </div>
+          
+          <p className="text-lg text-gray-600 max-w-2xl leading-relaxed font-light">
+            Cada producto está diseñado para llevar tus límites al máximo,
+            respaldado por <span className="text-gray-900 font-normal">tecnología de rendimiento</span> y atletas de élite.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200">
           {services.map((service, index) => (
             <ServiceCard
               key={index}

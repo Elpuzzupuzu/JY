@@ -3,37 +3,42 @@ import { CheckCircle } from 'lucide-react'; // Importar CheckCircle aquí
 
 const ExpertiseCard = ({ icon: Icon, title, description, features, animationClass, id, style }) => (
     <div 
-        // glass-card y hover-lift: mantienen la limpieza sobre fondo claro
-        className={`glass-card rounded-3xl p-8 shadow-xl hover-lift group ${animationClass}`}
+        // Estilo: Sombra y borde que simulan un "corte" o "diseño técnico".
+        className={`bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-xl 
+                    group transform hover:scale-[1.03] hover:border-green-500/50 
+                    transition-all duration-300 ${animationClass}`}
         data-animate
         id={id}
         style={style}
     >
-        {/* Ícono: Degradado Azul Marino Corporativo Consistente */}
-        <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A8A] to-[#3B82F6] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 sparkle">
+        {/* Ícono: Degradado Verde Deportivo (Alto Impacto/Energía) */}
+        <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-lime-400 rounded-xl 
+                        flex items-center justify-center mb-6 shadow-lg 
+                        group-hover:scale-110 group-hover:rotate-1 transition-all duration-300">
             <Icon className="w-8 h-8 text-white" />
         </div>
         
-        {/* Título: Gris Carbón 900 para seriedad */}
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
+        {/* Título: Fuerte, en mayúsculas y color negro audaz. */}
+        <h3 className="text-2xl font-black text-gray-900 mb-3 uppercase tracking-tight">{title}</h3>
         
-        {/* Descripción: Gris 600 para suavidad y legibilidad */}
-        <p className="text-gray-600 leading-relaxed mb-6">{description}</p>
+        {/* Descripción: Gris para suavidad y legibilidad, enfocada en la funcionalidad. */}
+        <p className="text-gray-600 leading-relaxed mb-6 font-medium">{description}</p>
         
-        <ul className="space-y-2">
+        <ul className="space-y-3">
             {features.map((feature, i) => (
-                <li key={i} className="flex items-center text-gray-700 text-sm">
-                    {/* CheckCircle: Reemplazamos el ROJO con Azul de Acento (Profesionalismo) */}
-                    <CheckCircle className="w-4 h-4 text-[#3B82F6] mr-3 flex-shrink-0" />
+                // Puntos clave: Icono de Check en Verde Lima/Neón para acción/validación.
+                <li key={i} className="flex items-start text-gray-800 font-semibold text-base">
+                    <CheckCircle className="w-5 h-5 text-lime-400 mr-3 mt-0.5 flex-shrink-0" />
                     <span>{feature}</span>
                 </li>
             ))}
         </ul>
         
-        {/* Botón: Usamos Azul Marino para texto y Azul de Acento en el hover */}
-        <button className="mt-6 flex items-center text-sm font-semibold text-[#1E3A8A] hover:text-[#3B82F6] transition-colors">
-            Saber Más
-            <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">
+        {/* Botón: Usamos Verde Deportivo como acento de acción. */}
+        <button className="mt-6 flex items-center text-base font-extrabold text-green-600 
+                           hover:text-lime-500 transition-colors duration-300">
+            Comprar Ahora 
+            <span className="ml-2 text-xl transform group-hover:translate-x-1 transition-transform duration-300">
                 &rarr;
             </span>
         </button>

@@ -5,50 +5,53 @@ const ServiceCard = ({ service, isVisible, index }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    // Redirige a la página de menú de servicio según el id
     navigate(`/servicios/${service.id}`);
   };
 
   return (
     <div
       onClick={handleClick}
-      className={`group glass-card rounded-3xl p-8 shadow-lg border border-slate-100 hover-lift animate-scale-in ${
+      className={`group bg-white p-10 border border-gray-200 hover:border-gray-900 
+                  transition-all duration-500 animate-scale-in ${
         isVisible ? "visible" : ""
       }`}
       data-animate
       id={`service-${index}`}
       style={{ animationDelay: `${index * 0.1}s`, cursor: "pointer" }}
     >
-      {/* Icono */}
+      {/* Icono minimalista */}
       <div
-        className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform sparkle`}
+        className={`w-14 h-14 border border-gray-200 flex items-center justify-center mb-8 
+                    group-hover:border-lime-500 transition-all duration-500`}
       >
-        <service.icon className="w-8 h-8 text-white" />
+        <service.icon className="w-6 h-6 text-lime-500" />
       </div>
 
-      {/* Título */}
-      <h3 className="text-2xl font-bold text-[#1C2E82] mb-4 group-hover:text-[#ED0000] transition-colors">
+      {/* Título limpio */}
+      <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-tight">
         {service.title}
       </h3>
 
       {/* Descripción */}
-      <p className="text-slate-700 leading-relaxed mb-6">{service.description}</p>
+      <p className="text-gray-600 leading-relaxed mb-8 font-light">
+        {service.description}
+      </p>
 
-      {/* Items */}
-      <ul className="space-y-2 mb-6">
+      {/* Items con checks minimalistas */}
+      <ul className="space-y-3 mb-10 pb-10 border-b border-gray-100">
         {service.items.map((item, idx) => (
-          <li key={idx} className="flex items-center text-sm text-slate-600">
-            <CheckCircle className="w-4 h-4 text-[#ED0000] mr-3 flex-shrink-0" />
-            {item.name}
+          <li key={idx} className="flex items-start text-sm text-gray-700 font-light">
+            <CheckCircle className="w-4 h-4 text-lime-500 mr-3 flex-shrink-0 mt-0.5" />
+            <span>{item.name}</span>
           </li>
         ))}
       </ul>
 
-      {/* Botón */}
-      <div className="w-full bg-gradient-to-r from-slate-100 to-slate-50 text-slate-700 font-semibold py-3 px-6 rounded-xl flex items-center justify-center transition-all duration-300 group/btn">
-        <span className="mr-2">Ver Detalles</span>
-        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-      </div>
+      {/* CTA minimalista */}
+      {/* <div className="flex items-center text-sm font-medium text-gray-900 group-hover:text-lime-500 transition-colors duration-300">
+        <span className="mr-2 tracking-wide">Ver Productos</span>
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+      </div> */}
     </div>
   );
 };

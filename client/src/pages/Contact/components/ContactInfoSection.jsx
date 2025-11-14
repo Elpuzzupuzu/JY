@@ -1,7 +1,7 @@
 // src/components/contact/ContactInfoSection.jsx
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react'; // Agregamos Clock para el horario
 import ContactInfoCard from './ContactInfoCard';
 
 // Variante de animación del contenedor (más simple y profesional)
@@ -30,54 +30,65 @@ const itemVariants = {
 };
 
 const ContactInfoSection = () => (
-    // 💡 Contenedor: Fondo blanco sólido, esquinas redondeadas elegantes (xl), sombra nítida, borde sutil.
+    // 💡 Contenedor: Ajuste del borde y la sombra para adaptarse a la estética verde/esports
     <motion.div 
-        className="bg-white p-8 md:p-10 rounded-xl shadow-2xl shadow-gray-300/50 border border-gray-100"
+        className="bg-white p-8 md:p-10 rounded-xl shadow-2xl shadow-[#4CAF50]/30 border border-[#4CAF50]/10" // Sombra y borde verde sutil
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={cardVariants}
     >
-        {/* Título: Gris Carbón (más serio) y peso font-bold */}
+        {/* Título: Color de acento Verde Vibrante */}
         <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight" 
+            className="text-3xl md:text-4xl font-bold text-[#0A2A1A] mb-4 tracking-tight" // Título en Verde Oscuro para contraste
             variants={itemVariants}
         >
-            Detalles de Contacto
+            🚀 Soporte Pro de JY esports
         </motion.h2>
         
-        {/* Párrafo: Gris oscuro, peso normal para la legibilidad */}
+        {/* Párrafo: Se adapta el texto a la temática esports */}
         <motion.p 
             className="text-gray-700 text-base md:text-lg leading-relaxed mb-8 font-normal" 
             variants={itemVariants}
         >
-            Si prefieres comunicarte directamente, aquí están nuestros datos. Estamos disponibles para ayudarte con cualquier consulta que tengas.
+            ¿Necesitas ayuda con tu pedido o equipamiento? Nuestro equipo de soporte está listo para ayudarte a volver al juego lo antes posible.
         </motion.p>
 
         <div className="space-y-6">
-            {/* Uso de ContactInfoCard (ya modificado en el paso anterior) */}
+            {/* Tarjeta de Email - DATOS ACTUALIZADOS */}
             <ContactInfoCard
                 Icon={Mail}
-                title="Email"
-                value="ventas@flucsa.com.mx"
-                href="mailto:ventas@flucsa.com.mx"
-                // ❌ Eliminamos iconBg. El color del ícono es fijo en ContactInfoCard.jsx
+                title="Email de Soporte"
+                value="soporte@jyesports.mx"
+                href="mailto:soporte@jyesports.mx"
                 itemDelay={0} 
             />
+            
+            {/* Tarjeta de Teléfono - DATOS ACTUALIZADOS */}
             <ContactInfoCard
                 Icon={Phone}
-                title="Teléfono"
-                value="(+52) 9993632630"
-                href="tel:+529993632630"
-                // ❌ Eliminamos iconBg. El color del ícono es fijo en ContactInfoCard.jsx
+                title="Línea Directa"
+                value="+52 55 1234 5678"
+                href="tel:+525512345678"
                 itemDelay={0.15}
             />
+            
+            {/* Tarjeta de Dirección - DATOS ACTUALIZADOS */}
             <ContactInfoCard
                 Icon={MapPin}
-                title="Dirección"
-                value="Calle 26a entre 47 y 51. Colonia El Roble Ciudad Industrial, Mérida Yucatán, México C.P : 97256"
-                // ❌ Eliminamos iconBg. El color del ícono es fijo en ContactInfoCard.jsx
+                title="Base de Operaciones"
+                value="Avenida del Deporte #45, Colonia Campeones, Ciudad de México, México C.P. 01020"
+                href="#"
                 itemDelay={0.3}
+            />
+            
+            {/* Tarjeta Adicional: Horario de Atención (Relevante para contacto) */}
+            <ContactInfoCard
+                Icon={Clock}
+                title="Horario de Atención"
+                value="Lunes a Viernes: 9:00 - 18:00 hrs (GMT-6)"
+                href="#"
+                itemDelay={0.45}
             />
         </div>
     </motion.div>

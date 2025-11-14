@@ -2,83 +2,90 @@ import React from 'react';
 import HistoryItemCard from './HistoryItemCard';
 
 const HistorySection = ({ historyItems, getAnimationClass, UsersIcon }) => (
-    // Fondo limpio y suave
-    <section className="bg-gradient-to-br from-white to-gray-50 py-20 px-6 relative">
-        <div className="max-w-6xl mx-auto">
-            {/* Título de la Sección */}
+    <section className="bg-white py-32 px-6">
+        <div className="max-w-7xl mx-auto">
+            {/* Header minimalista */}
             <div 
-                className={`text-center mb-16 ${getAnimationClass('history')}`}
+                className={`mb-24 ${getAnimationClass('history')}`}
                 data-animate
                 id="history"
             >
-                {/* Título: Usando Gris Carbón 900 para base, acentuado con Azul Marino */}
-                <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tight text-gray-900">
-                    <span className="text-[#1E3A8A]">Nuestra</span> Historia
+                <div className="space-y-1 mb-8">
+                    <span className="text-lime-500 text-xs font-medium tracking-widest uppercase">
+                        Nuestra Historia
+                    </span>
+                </div>
+
+                <h2 className="text-5xl md:text-6xl lg:text-7xl font-light leading-none tracking-tight mb-8">
+                    <span className="text-gray-900 font-semibold">Nuestra </span>
+                    <span className="text-gray-900 font-extralight">Trayectoria</span>
                 </h2>
-                {/* Separador elegante en Azul Marino */}
-                <div className="w-20 h-1 bg-[#1E3A8A] mx-auto mb-6 rounded-full"></div>
-                {/* Descripción: Gris Oscuro 700 para legibilidad y seriedad */}
-                <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                    Una trayectoria de excelencia e innovación que comenzó con una visión y se ha convertido en liderazgo.
+
+                <div className="space-y-1 mb-10">
+                    <div className="h-px w-20 bg-lime-500"></div>
+                    <div className="h-px w-16 bg-gray-300"></div>
+                </div>
+
+                <p className="text-lg text-gray-600 max-w-2xl leading-relaxed font-light">
+                    Forjamos la excelencia con pasión. Conoce los{' '}
+                    <span className="text-gray-900 font-normal">hitos que nos han llevado</span> al liderazgo en el deporte.
                 </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+                
                 {/* Columna de Items de Historia */}
-                <div className="space-y-8">
+                <div className="space-y-12">
                     {historyItems.map((item, index) => (
                         <HistoryItemCard 
                             key={index} 
                             {...item} 
                             animationClass={getAnimationClass(`history-${index}`)}
                             id={`history-${index}`}
-                            style={{ animationDelay: `${index * 0.2}s` }}
+                            style={{ animationDelay: `${index * 0.15}s` }}
                         />
                     ))}
                 </div>
                 
-                {/* Columna de Cards de Equipo (Información del equipo) */}
-                <div className="space-y-8">
-                    {/* Card de Equipo Fundador - Azul Marino */}
+                {/* Columna de Cards de Equipo */}
+                <div className="space-y-12 lg:sticky lg:top-8"> 
+                    
+                    {/* Card de Equipo Fundador */}
                     <div 
-                        className={`relative group ${getAnimationClass('images', 'scale-in')}`}
+                        className={`bg-gray-50 p-10 group ${getAnimationClass('images', 'scale-in')}`}
                         data-animate
                         id="images"
                     >
-                        {/* Sombra sutil en Azul Marino */}
-                        <div className="absolute inset-0 bg-[#1E3A8A] rounded-3xl blur-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
-                        {/* Borde sutil en Azul Marino */}
-                        <div className="relative bg-gradient-to-br from-[#1E3A8A] to-[#3B82F6] rounded-3xl p-1 shadow-xl">
-                            <div className="bg-white rounded-[1.4rem] p-8 text-center">
-                                {/* Icono en Azul Marino y blanco */}
-                                <div className="w-24 h-24 mx-auto bg-gradient-to-br from-[#1E3A8A] to-[#3B82F6] rounded-full flex items-center justify-center mb-6 shadow-md">
-                                    <UsersIcon className="w-12 h-12 text-white" />
-                                </div>
-                                {/* Título: Aseguramos Gris Carbón 900 para el texto sobre fondo blanco */}
-                                <h4 className="text-2xl font-bold text-gray-900 mb-2">Equipo Fundador</h4>
-                                {/* Párrafo: Aseguramos Gris Oscuro 700 para el texto sobre fondo blanco */}
-                                <p className="text-gray-700">Los visionarios que iniciaron esta gran historia.</p>
-                            </div>
+                        {/* Icono minimalista */}
+                        <div className="w-16 h-16 mx-auto border border-gray-200 flex items-center justify-center mb-8 
+                                        group-hover:border-lime-500 transition-all duration-500">
+                            <UsersIcon className="w-8 h-8 text-lime-500" />
                         </div>
+                        
+                        <h4 className="text-xl font-medium text-gray-900 mb-3 text-center">
+                            Visión de Liderazgo
+                        </h4>
+                        
+                        <p className="text-gray-600 font-light text-center leading-relaxed">
+                            Fundado por atletas, impulsado por la innovación y la victoria.
+                        </p>
                     </div>
                     
-                    {/* Card de Equipo Actual - Gris Carbón (para contraste serio) */}
-                    <div className="relative group">
-                        {/* Sombra sutil en Gris Carbón */}
-                        <div className="absolute inset-0 bg-[#374151] rounded-3xl blur-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
-                        {/* Borde sutil en Gris Carbón (Usando Gris 700 y 500 como alternativa al Azul) */}
-                        <div className="relative bg-gradient-to-br from-gray-700 to-gray-500 rounded-3xl p-1 shadow-xl">
-                            <div className="bg-white rounded-[1.4rem] p-8 text-center">
-                                {/* Icono en Gris Carbón y blanco */}
-                                <div className="w-24 h-24 mx-auto bg-gradient-to-br from-gray-700 to-gray-500 rounded-full flex items-center justify-center mb-6 shadow-md">
-                                    <UsersIcon className="w-12 h-12 text-white" />
-                                </div>
-                                {/* Título: Aseguramos Gris Carbón 900 para el texto sobre fondo blanco */}
-                                <h4 className="text-2xl font-bold text-gray-900 mb-2">Nuestro Equipo Actual</h4>
-                                {/* Párrafo: Aseguramos Gris Oscuro 700 para el texto sobre fondo blanco */}
-                                <p className="text-gray-700">Profesionales comprometidos con la excelencia y el futuro.</p>
-                            </div>
+                    {/* Card de Equipo Actual */}
+                    <div className="bg-gray-50 p-10 group">
+                        {/* Icono minimalista */}
+                        <div className="w-16 h-16 mx-auto border border-gray-200 flex items-center justify-center mb-8 
+                                        group-hover:border-lime-500 transition-all duration-500">
+                            <UsersIcon className="w-8 h-8 text-lime-500" />
                         </div>
+                        
+                        <h4 className="text-xl font-medium text-gray-900 mb-3 text-center">
+                            Nuestro Team de Campeones
+                        </h4>
+                        
+                        <p className="text-gray-600 font-light text-center leading-relaxed">
+                            Especialistas comprometidos a llevarte al siguiente nivel deportivo.
+                        </p>
                     </div>
                 </div>
             </div>

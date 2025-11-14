@@ -12,7 +12,7 @@ import {
   LayoutDashboard,
   ListChecks,
   FileText,
-  Handshake, // ⬅️ NUEVO: Ícono para Cotizaciones (representa acuerdo/transacción)
+  Handshake,
 } from 'lucide-react';
 
 // =========================================================
@@ -53,30 +53,22 @@ const Navigation = ({
   rol,
 }) => {
   const commonClasses = 'font-medium transition-all duration-300 relative group';
-  const desktopClasses = 'text-white hover:text-white/90 whitespace-nowrap';
+  const desktopClasses = 'text-gray-900 hover:text-green-600 whitespace-nowrap';
 
-  // 🟢 DEFINICIÓN DE COLORES BASE VERDE
-  const primaryColor = 'text-emerald-400';
-  const primaryHover = 'bg-emerald-500/10 hover:text-white';
+  const primaryColor = 'text-green-600';
+  const secondaryColor = 'text-green-500';
+  const activeBg = 'bg-green-600/10';
 
-  // Determina la lista completa de enlaces para la vista móvil/tablet
   let allNavItems = [...COMMON_NAV_ITEMS];
-
-  if (isLoggedIn) {
-    allNavItems = [...allNavItems, ...USER_NAV_ITEMS];
-  }
-
-  if (rol === 'admin') {
-    allNavItems = [...allNavItems, ...ADMIN_NAV_ITEMS];
-  }
+  if (isLoggedIn) allNavItems = [...allNavItems, ...USER_NAV_ITEMS];
+  if (rol === 'admin') allNavItems = [...allNavItems, ...ADMIN_NAV_ITEMS];
 
   // ---------------------------------------------------------
   // VISTA MÓVIL
   // ---------------------------------------------------------
   if (isMobile) {
     return (
-      <nav className="flex flex-col space-y-4">
-        {/* Enlaces de navegación principales y de rol */}
+      <nav className="flex flex-col space-y-2">
         {allNavItems.map(({ path, label, icon: Icon }) => (
           <NavLink
             key={path}
@@ -85,8 +77,8 @@ const Navigation = ({
             className={({ isActive }) =>
               `flex items-center gap-3 px-3 py-2 rounded-lg transition-all ${
                 isActive
-                  ? 'bg-white/10 text-emerald-300'
-                  : 'text-white/80 hover:bg-white/5 hover:text-white'
+                  ? `${activeBg} text-green-600 font-bold border border-green-600/30`
+                  : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
               }`
             }
           >
@@ -95,17 +87,16 @@ const Navigation = ({
           </NavLink>
         ))}
 
-        {/* Separador y Opciones de Sesión */}
-        <div className="border-t border-white/10 my-4" />
+        <div className="border-t border-gray-200 my-4" />
 
         {isLoggedIn ? (
           <>
             <NavLink
               to="/mi-cuenta"
               onClick={onLinkClick}
-              className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-white/80 hover:bg-white/5 hover:text-white"
+              className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-gray-700 hover:bg-gray-100 hover:text-gray-900"
             >
-              <User size={20} />
+              <User size={20} className="text-blue-600" />
               <span className="font-medium">Mi Cuenta</span>
             </NavLink>
 
@@ -114,7 +105,7 @@ const Navigation = ({
                 onLogout();
                 onLinkClick();
               }}
-              className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-red-300 hover:bg-red-500/10 hover:text-red-100"
+              className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-red-600 hover:bg-red-500/10 hover:text-red-700 font-bold"
             >
               <LogOut size={20} />
               <span className="font-medium">Cerrar Sesión</span>
@@ -124,9 +115,9 @@ const Navigation = ({
           <NavLink
             to="/login"
             onClick={onLinkClick}
-            className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-white/80 hover:bg-white/5 hover:text-white"
+            className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-gray-700 hover:bg-gray-100 hover:text-gray-900"
           >
-            <LogIn size={20} />
+            <LogIn size={20} className="text-gray-500" />
             <span className="font-medium">Iniciar Sesión</span>
           </NavLink>
         )}
@@ -138,25 +129,22 @@ const Navigation = ({
   // VISTA ESCRITORIO
   // ---------------------------------------------------------
   return (
-    <nav className="hidden lg:flex items-center space-x-6">
-      {/* 1. Enlaces Comunes */}
+    <nav className="hidden lg:flex items-center space-x-6 py-2">
       {COMMON_NAV_ITEMS.map(({ path, label }) => (
         <NavLink
           key={path}
           to={path}
           className={({ isActive }) =>
-            `${commonClasses} ${desktopClasses} ${
-              isActive ? 'text-emerald-300 font-semibold' : ''
+            `${commonClasses} text-gray-700 hover:text-green-600 ${
+              isActive ? 'text-green-600 font-bold' : ''
             }`
           }
         >
           {label}
-          {/* 🟢 Barra inferior de acento */}
-          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-emerald-400 transition-all duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
+          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-green-600 transition-all duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
         </NavLink>
       ))}
 
-      {/* 1.5 Enlaces de Usuario (Solo si está logueado y no es admin) */}
       {isLoggedIn &&
         rol !== 'admin' &&
         USER_NAV_ITEMS.map(({ path, label }) => (
@@ -164,34 +152,31 @@ const Navigation = ({
             key={path}
             to={path}
             className={({ isActive }) =>
-              `${commonClasses} ${desktopClasses} text-lime-300 hover:text-lime-100 ${
-                isActive ? 'font-semibold' : ''
+              `${commonClasses} text-blue-600 hover:text-blue-700 ${
+                isActive ? 'font-bold' : ''
               }`
             }
           >
             {label}
-            {/* 🟢 Barra inferior de acento (verde lima) */}
-            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-lime-400 transition-all duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
+            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
           </NavLink>
         ))}
 
-      {/* 2. Enlaces de Administrador (Solo si el rol es 'admin') */}
       {rol === 'admin' && (
         <>
-          <span className="text-white/50">|</span>
+          <span className="text-gray-400">|</span>
           {ADMIN_NAV_ITEMS.map(({ path, label }) => (
             <NavLink
               key={path}
               to={path}
               className={({ isActive }) =>
-                `${commonClasses} ${desktopClasses} font-bold text-yellow-300 hover:text-yellow-100 ${
-                  isActive ? 'border-b-2 border-yellow-400' : ''
+                `${commonClasses} font-bold text-orange-500 hover:text-orange-600 ${
+                  isActive ? 'border-b-2 border-orange-500' : ''
                 }`
               }
             >
               {label}
-              {/* 🟡 Barra inferior amarilla para diferenciar admin */}
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-yellow-400 transition-all duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-orange-500 transition-all duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
             </NavLink>
           ))}
         </>

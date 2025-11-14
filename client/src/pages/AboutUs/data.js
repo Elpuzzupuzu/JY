@@ -4,137 +4,143 @@ import {
   Award, 
   TrendingUp, 
   Handshake, 
-  Droplet, 
-  Wrench, 
-  Spade, 
-  Home, 
+  Droplet, // Mantenemos íconos funcionales, pero ajustamos el título
+  Wrench, // Mantenemos íconos funcionales, pero ajustamos el título
+  Spade, // Mantenemos íconos funcionales, pero ajustamos el título
+  Home, // Mantenemos íconos funcionales, pero ajustamos el título
   CheckCircle, 
   Star 
 } from 'lucide-react';
 
-import riego from '../../assets/images/imgs/riego.jpg'; 
-import riego2 from '../../assets/images/imgs/riego2.jpg'; 
-import epis from '../../assets/images/imgs/epis.jpg'; 
-import cocina from '../../assets/images/imgs/cocina.jpg'; 
-import indus from '../../assets/images/imgs/indus.jpg'; 
-import tinaco from '../../assets/images/imgs/tinaco.jpg'; 
+// NOTA: Las imágenes (riego, epis, etc.) DEBEN ser reemplazadas por imágenes deportivas
+import riego from '../../assets/images/imgs/natacion.jpg'; 
+import riego2 from '../../assets/images/imgs/deportes_equipo.jpg'; 
+import epis from '../../assets/images/imgs/fitness.jpg'; 
+import cocina from '../../assets/images/imgs/running.jpg'; 
+import indus from '../../assets/images/imgs/yoga.jpg'; 
+import tinaco from '../../assets/images/imgs/aventura.jpg'; 
 
+// 🎯 Stats: Se enfocan en el rendimiento, la experiencia y los logros.
 export const stats = [
-  { icon: Calendar, number: '2015', key: 'years', label: 'Año de Fundación' },
-  { icon: Users, number: '500+', key: 'clients', label: 'Clientes Satisfechos' },
-  { icon: Award, number: '10', key: 'experience', label: 'Años de Experiencia' },
-  { icon: TrendingUp, number: '100%', key: 'satisfaction', label: 'Atención del Cliente' },
+  { icon: Calendar, number: '2015', key: 'founded', label: 'Inicio del Juego' },
+  { icon: Users, number: '500k+', key: 'community', label: 'Comunidad de Atletas' },
+  { icon: Award, number: '10+', key: 'champion', label: 'Años de Victoria' },
+  { icon: TrendingUp, number: '99.9%', key: 'performance', label: 'Rendimiento Verificado' },
 ];
 
+// 📦 Expertise Areas: Ahora son Categorías de Equipamiento Deportivo.
 export const expertiseAreas = [
   { 
-    icon: Droplet, 
-    title: 'Sistemas de Riego', 
-    description: 'Soluciones eficientes para optimizar el consumo de agua y el cuidado de tus jardines.',
-    features: ['Riego automatizado','Ahorro de agua'],
-    image: riego2
+    icon: Droplet, // Usado para Natación/Hidratación
+    title: 'Natación y Deportes Acuáticos', 
+    description: 'Equipamiento profesional para entrenamientos y competición en agua: desde goggles hasta trajes de alto rendimiento.',
+    features: ['Trajes hidrodinámicos','Goggles anti-empaño'],
+    image: riego2 // Reemplazar por imagen de natación
   },
   { 
-    icon: Handshake, 
-    title: 'Equipos para Piscinas', 
-    description: 'Diseño e instalación de sistemas de filtrado y bombas para piscinas residenciales.',
-    features: ['Filtros de alta calidad', 'Bombas eficientes', 'Mantenimiento'],
-    image: epis
+    icon: Handshake, // Usado para Team Sports / Equipos
+    title: 'Deportes de Equipo', 
+    description: 'Balones, uniformes y accesorios de la más alta resistencia para fútbol, baloncesto y voleibol.',
+    features: ['Balones Pro Series', 'Uniformes Transpirables', 'Protecciones de impacto'],
+    image: epis // Reemplazar por imagen de deportes de equipo
   },
   { 
-    icon: Wrench, 
-    title: 'Instalaciones de Cocina', 
-    description: 'Especialistas en lavabos, tuberías y grifería de alta calidad para tu cocina.',
-    features: ['Grifería', 'Instalación experta', 'Garantía extendida'],
-    image: cocina
+    icon: Wrench, // Usado para Mantenimiento / Fitness Tech
+    title: 'Fitness y Gimnasio', 
+    description: 'Tecnología y accesorios para optimizar tu entrenamiento en casa o en el gimnasio: pesas, bandas y monitores.',
+    features: ['Equipamiento Ergonómico', 'Monitores de Ritmo', 'Accesorios de Resistencia'],
+    image: cocina // Reemplazar por imagen de fitness
   }, 
   { 
-    icon: Spade, 
-    title: 'Tuberías y Plomería', 
-    description: 'Diagnóstico y reparación de fugas, así como la instalación completa de sistemas de tuberías.',
-    features: ['Detección de fugas', 'Materiales duraderos', 'Servicio a domicilio'],
-    image: riego
+    icon: Spade, // Usado para Running / Trail
+    title: 'Running y Trail', 
+    description: 'Calzado y ropa técnica diseñados para la velocidad, la resistencia y los terrenos más difíciles.',
+    features: ['Calzado de Velocidad', 'Ropa de Compresión', 'Accesorios de Hidratación'],
+    image: riego // Reemplazar por imagen de running
   },
   { 
-    icon: Home, 
-    title: 'Tinacos y Cisternas', 
-    description: 'Soluciones de almacenamiento de agua potable con instalaciones seguras y duraderas.',
-    features: ['Instalación segura', 'Materiales certificados', 'Mantenimiento preventivo'],
-    image: tinaco
+    icon: Home, // Usado para Hogar / Yoga
+    title: 'Yoga y Bienestar', 
+    description: 'Artículos premium para recuperación y flexibilidad: mats, bloques, rodillos de espuma y ropa cómoda.',
+    features: ['Mats Ecológicos', 'Ropa de Algodón', 'Herramientas de Recuperación'],
+    image: tinaco // Reemplazar por imagen de yoga
   },
   { 
-    icon: Home, 
-    title: 'Industriales', 
-    description: 'Soluciones de almacenamiento de agua potable con instalaciones seguras y duraderas.',
-    features: ['Instalación segura', 'Materiales certificados', 'Mantenimiento preventivo'],
-    image: indus
+    icon: Home, // Usado para Equipamiento Exterior
+    title: 'Accesorios de Aventura', 
+    description: 'Equipamiento para deportes al aire libre, garantizando seguridad y durabilidad en condiciones extremas.',
+    features: ['Linternas Tácticas', 'Mochilas Ligeras', 'Botellas Térmicas'],
+    image: indus // Reemplazar por imagen de aventura
   }
 ];
 
+// 🗣️ Testimonials: Historias de éxito y rendimiento.
 export const testimonials = [
   {
-    name: "Ana Rodríguez",
-    role: "Gerente de Proyectos",
-    text: "El equipo de Flucsa superó mis expectativas. Su sistema de riego es impecable y su servicio al cliente, excepcional.",
+    name: "Carolina Sáenz",
+    role: "Maratonista Élite",
+    text: "Su calzado me dio la ventaja que necesitaba para mi mejor tiempo. La tecnología de suela es simplemente incomparable.",
     rating: 5,
-    avatar: "A.R."
+    avatar: "C.S."
   },
   {
-    name: "Juan Pérez",
-    role: "Dueño de Negocio",
-    text: "Los instaladores de tuberías fueron rápidos y profesionales. Un trabajo de calidad que se nota en cada detalle.",
+    name: "Ricardo Flores",
+    role: "Entrenador Personal Certificado",
+    text: "El equipamiento de resistencia es de calidad profesional. Lo recomiendo a todos mis clientes para llevar su entrenamiento al límite.",
     rating: 5,
-    avatar: "J.P."
+    avatar: "R.F."
   },
   {
-    name: "María González",
-    role: "Arquitecta",
-    text: "Flucsa transformó completamente nuestro proyecto. Su expertise en sistemas hidráulicos es incomparable.",
+    name: "Elena Soto",
+    role: "Capitana del Equipo de Voleibol",
+    text: "La ropa de compresión es cómoda y mantiene el cuerpo perfecto durante la competición. ¡Victoria asegurada!",
     rating: 5,
-    avatar: "M.G."
+    avatar: "E.S."
   }
 ];
 
+// 📜 History Items: Hitos de crecimiento centrados en la superación.
 export const historyItems = [
   {
     icon: Award,
-    title: "Nuestros Inicios (2015)",
-    description: "Fundada como un pequeño taller familiar con una gran visión: revolucionar la industria hidráulica con soluciones innovadoras y de máxima calidad.",
-    gradient: "from-[#1C2E82] to-[#2d4bc7]"
+    title: "El Primer Salto (2015)",
+    description: "Nacimos de la pasión por el deporte, con la misión de equipar a cada atleta para alcanzar su máximo potencial. Fue nuestro primer gran desafío.",
+    gradient: "from-[#1C2E82] to-[#2d4bc7]" // Manteniendo gradientes (para ser ajustados en el componente)
   },
   {
     icon: TrendingUp,
-    title: "Nuestro Crecimiento",
-    description: "Evolucionamos constantemente, incorporando las últimas tecnologías sin perder de vista nuestros valores fundamentales: calidad, confiabilidad y excelencia.",
-    gradient: "from-[#ED0000] to-[#ff4444]"
+    title: "La Expansión de Récords",
+    description: "Crecemos constantemente, incorporando la última tecnología deportiva, desde tejidos inteligentes hasta monitoreo avanzado de rendimiento.",
+    gradient: "from-[#ED0000] to-[#ff4444]" // Manteniendo gradientes (para ser ajustados en el componente)
   },
   {
     icon: Star,
-    title: "Nuestro Presente",
-    description: "Hoy somos un referente de excelencia en el mercado, manteniendo nuestro compromiso con la satisfacción del cliente y la innovación constante.",
-    gradient: "from-purple-600 to-pink-600"
+    title: "Nuestra Posición de Liderazgo",
+    description: "Hoy somos el referente para el alto rendimiento, manteniendo nuestro compromiso con la innovación y la superación de los límites en cada producto.",
+    gradient: "from-purple-600 to-pink-600" // Manteniendo gradientes (para ser ajustados en el componente)
   }
 ];
 
+// 💎 Values: Principios que definen el espíritu deportivo.
 export const values = [
   {
     icon: CheckCircle,
-    title: "Calidad",
-    description: "Utilizamos materiales de primera y tecnología de vanguardia"
+    title: "Rendimiento",
+    description: "Cada producto está diseñado para maximizar tu potencial físico."
   },
   {
     icon: Users,
-    title: "Confianza",
-    description: "10 años construyendo relaciones duraderas con nuestros clientes"
+    title: "Comunidad",
+    description: "Creamos lazos con atletas que comparten la pasión por el deporte."
   },
   {
     icon: TrendingUp,
-    title: "Innovación",
-    description: "Siempre a la vanguardia en soluciones hidráulicas"
+    title: "Superación",
+    description: "Fomentamos la mentalidad de ir siempre más allá de tus límites."
   },
   {
     icon: Award,
-    title: "Excelencia",
-    description: "Comprometidos con superar las expectativas en cada proyecto"
+    title: "Calidad Pro",
+    description: "Equipamiento de nivel profesional para cualquier disciplina."
   }
 ];
