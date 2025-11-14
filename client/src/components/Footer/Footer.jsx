@@ -1,96 +1,131 @@
 import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Clock } from 'lucide-react'
 
 function Footer() {
-  // Color Base: Verde Oscuro (green-800)
-  // Color de Acento: Verde Lima (lime-400)
   return (
-    <footer className="bg-green-800 text-gray-200"> 
+    <footer className="bg-white border-t border-gray-200"> 
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Información de la Compañía (Company Info) */}
-          <div className="space-y-4">
-            <h3 className="text-white text-xl font-bold mb-4">Acerca de Nosotros 🌿</h3>
-            <p className="text-gray-400">Tu destino para **equipamiento deportivo y ropa de alto rendimiento**. Impulsa tu potencial con la mejor selección y calidad.</p>
-            <div className="flex space-x-4">
-              {/* Iconos hover:text-lime-400 */}
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300">
-                <Facebook className="w-6 h-6" />
+      <div className="container mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          
+          {/* Información de la Compañía */}
+          <div className="space-y-6">
+            <h3 className="text-gray-900 text-lg font-medium mb-6">Acerca de Nosotros</h3>
+            
+            {/* Línea decorativa */}
+            <div className="h-px w-12 bg-lime-500 mb-6"></div>
+            
+            <p className="text-gray-600 font-light leading-relaxed">
+              Tu destino para equipamiento deportivo y ropa de alto rendimiento. 
+              <span className="text-gray-900 font-normal"> Impulsa tu potencial</span> con la mejor selección y calidad.
+            </p>
+            
+            <div className="flex gap-4 pt-2">
+              <a href="#" className="w-10 h-10 border border-gray-200 flex items-center justify-center
+                                   hover:border-lime-500 transition-all duration-500 group">
+                <Facebook className="w-5 h-5 text-gray-600 group-hover:text-lime-500 transition-colors duration-500" />
               </a>
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300">
-                <Instagram className="w-6 h-6" />
+              <a href="#" className="w-10 h-10 border border-gray-200 flex items-center justify-center
+                                   hover:border-lime-500 transition-all duration-500 group">
+                <Instagram className="w-5 h-5 text-gray-600 group-hover:text-lime-500 transition-colors duration-500" />
               </a>
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300">
-                <Twitter className="w-6 h-6" />
+              <a href="#" className="w-10 h-10 border border-gray-200 flex items-center justify-center
+                                   hover:border-lime-500 transition-all duration-500 group">
+                <Twitter className="w-5 h-5 text-gray-600 group-hover:text-lime-500 transition-colors duration-500" />
               </a>
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300">
-                <Youtube className="w-6 h-6" />
+              <a href="#" className="w-10 h-10 border border-gray-200 flex items-center justify-center
+                                   hover:border-lime-500 transition-all duration-500 group">
+                <Youtube className="w-5 h-5 text-gray-600 group-hover:text-lime-500 transition-colors duration-500" />
               </a>
             </div>
           </div>
 
-          {/* Enlaces Rápidos (Quick Links) */}
+          {/* Enlaces Rápidos */}
           <div>
-            <h3 className="text-white text-xl font-bold mb-4">Enlaces Rápidos ⚡</h3>
-            <ul className="space-y-2">
+            <h3 className="text-gray-900 text-lg font-medium mb-6">Enlaces Rápidos</h3>
+            
+            {/* Línea decorativa */}
+            <div className="h-px w-12 bg-lime-500 mb-6"></div>
+            
+            <ul className="space-y-3">
               <li>
-                {/* Enlaces hover:text-lime-400 */}
-                <a href="#" className="hover:text-lime-400 transition-colors duration-300">Tienda</a>
+                <a href="#" className="text-gray-600 font-light hover:text-gray-900 transition-colors duration-300">
+                  Tienda
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-lime-400 transition-colors duration-300">Entrenamiento</a>
+                <a href="#" className="text-gray-600 font-light hover:text-gray-900 transition-colors duration-300">
+                  Entrenamiento
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-lime-400 transition-colors duration-300">Marcas</a>
+                <a href="#" className="text-gray-600 font-light hover:text-gray-900 transition-colors duration-300">
+                  Marcas
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-lime-400 transition-colors duration-300">Nuevos Lanzamientos</a>
+                <a href="#" className="text-gray-600 font-light hover:text-gray-900 transition-colors duration-300">
+                  Nuevos Lanzamientos
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-lime-400 transition-colors duration-300">Ofertas Especiales</a>
+                <a href="#" className="text-gray-600 font-light hover:text-gray-900 transition-colors duration-300">
+                  Ofertas Especiales
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Información de Contacto (Contact Info) */}
+          {/* Información de Contacto */}
           <div>
-            <h3 className="text-white text-xl font-bold mb-4">Contáctanos 📞</h3>
+            <h3 className="text-gray-900 text-lg font-medium mb-6">Contáctanos</h3>
+            
+            {/* Línea decorativa */}
+            <div className="h-px w-12 bg-lime-500 mb-6"></div>
+            
             <ul className="space-y-4">
-              <li className="flex items-center space-x-3">
-                {/* Iconos text-lime-400 */}
-                <Phone className="w-5 h-5 text-lime-400" />
-                <span>+1 234 567 890 (Soporte)</span>
+              <li className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-lime-500 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-600 font-light text-sm">+1 234 567 890</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-lime-400" />
-                <span>contacto@sportgear.com</span>
+              <li className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-lime-500 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-600 font-light text-sm">contacto@sportgear.com</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-lime-400" />
-                <span>Calle del Deporte #456, Cdad. Central</span>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-lime-500 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-600 font-light text-sm">Calle del Deporte #456, Cdad. Central</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Clock className="w-5 h-5 text-lime-400" />
-                <span>Lun - Sáb: 8:00 AM - 9:00 PM</span>
+              <li className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-lime-500 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-600 font-light text-sm">Lun - Sáb: 8:00 AM - 9:00 PM</span>
               </li>
             </ul>
           </div>
 
-          {/* Boletín (Newsletter) */}
+          {/* Boletín */}
           <div>
-            <h3 className="text-white text-xl font-bold mb-4">Boletín de Atletas 📧</h3>
-            <p className="text-gray-400 mb-4">Sé el primero en saber de **nuevas colecciones y descuentos exclusivos** para tu próximo entrenamiento.</p>
-            <form className="flex flex-col space-y-2">
+            <h3 className="text-gray-900 text-lg font-medium mb-6">Boletín de Atletas</h3>
+            
+            {/* Línea decorativa */}
+            <div className="h-px w-12 bg-lime-500 mb-6"></div>
+            
+            <p className="text-gray-600 font-light text-sm leading-relaxed mb-6">
+              Sé el primero en saber de nuevas colecciones y descuentos exclusivos.
+            </p>
+            
+            <form className="space-y-3">
               <input
                 type="email"
-                placeholder="Ingresa tu email"
-                // Fondo del input ajustado al tema verde, focus ring lime-400
-                className="bg-green-900 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-lime-400"
+                placeholder="tu@email.com"
+                className="w-full bg-white border border-gray-200 px-4 py-3 
+                         focus:outline-none focus:border-lime-500 transition-colors duration-300
+                         text-sm font-light"
               />
               <button
                 type="submit"
-                // Botón con bg-lime-400 y texto negro
-                className="bg-lime-400 text-black font-semibold px-4 py-2 rounded hover:bg-lime-500 transition-colors duration-300"
+                className="w-full px-4 py-3 border border-gray-900 text-gray-900 font-light text-sm
+                         hover:bg-gray-900 hover:text-white transition-all duration-500
+                         tracking-wide"
               >
                 Suscribirme
               </button>
@@ -99,15 +134,23 @@ function Footer() {
         </div>
       </div>
 
-      {/* Barra Inferior (Bottom Bar) */}
-      <div className="border-t border-green-700"> {/* Borde ajustado al tema verde */}
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm">© 2024 **SportGear**. Todos los derechos reservados.</p>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300">Política de Privacidad</a>
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300">Términos y Condiciones</a>
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300">Política de Cookies</a>
+      {/* Barra Inferior */}
+      <div className="border-t border-gray-200">
+        <div className="container mx-auto px-6 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-sm text-gray-500 font-light">
+              © 2024 SportGear. Todos los derechos reservados.
+            </p>
+            <div className="flex gap-8 text-sm">
+              <a href="#" className="text-gray-500 font-light hover:text-gray-900 transition-colors duration-300">
+                Política de Privacidad
+              </a>
+              <a href="#" className="text-gray-500 font-light hover:text-gray-900 transition-colors duration-300">
+                Términos y Condiciones
+              </a>
+              <a href="#" className="text-gray-500 font-light hover:text-gray-900 transition-colors duration-300">
+                Política de Cookies
+              </a>
             </div>
           </div>
         </div>
@@ -115,6 +158,5 @@ function Footer() {
     </footer>
   )
 }
-
 
 export default Footer;

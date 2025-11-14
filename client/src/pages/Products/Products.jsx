@@ -11,6 +11,8 @@ import FilterSidebar from "./ProductFilter/ProductFilter";
 import HeroSlider from "../../components/BannerSlider/HeroSlider";
 import heroImage from '../../../src/assets/images/banner.jpg'
 import HeroSection from "../../components/HeroSection/HeroSection";
+import SessionLoader from "../../components/LoadingScreen/sesionLoader";
+import productsLoader from "../../components/LoadingScreen/productsLoader";
 
 
 const ProductsPage = ({ addToCart }) => {
@@ -42,7 +44,7 @@ const ProductsPage = ({ addToCart }) => {
   // Ref para la barra de filtros
   const toolbarRef = useRef(null);
 
-  if (loading) return <div className="flex justify-center p-20">Cargando...</div>;
+  if (loading) return <productsLoader/>;
   if (error) return <div className="text-center text-red-600 p-20">Error: {error}</div>;
 
   return (
