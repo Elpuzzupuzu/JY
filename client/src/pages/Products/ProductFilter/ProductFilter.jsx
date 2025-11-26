@@ -10,10 +10,10 @@ const FilterSidebar = ({ filters, onFilterChange, isOpen, onToggle }) => {
   // NOTA: Estas categorías DEBERÍAN cargarse desde la API y contener el UUID real.
   // Utiliza IDs reales de tu base de datos aquí para las pruebas.
   const categories = [
-    { name: 'Ferreteria', id: '2ded7b39-d779-476d-93fb-3f83fe981b4e', icon: Droplets },
-    { name: 'Industriales', id: '381dd166-bbc5-43ac-96d1-96116fe4f355', icon: Link },
-    { name: 'Domesticos', id: 'b05d6896-6aee-4461-9385-b46d32ec7c0a', icon: CircleDot },
-    { name: 'Piscinas', id: 'c33a2429-2647-43b7-aa52-c307b38f2274', icon: Filter },
+    { name: 'Soccer', id: '2ded7b39-d779-476d-93fb-3f83fe981b4e', icon: Droplets },
+    { name: 'Futbol americano', id: '381dd166-bbc5-43ac-96d1-96116fe4f355', icon: Link },
+    { name: 'Beisbol', id: 'b05d6896-6aee-4461-9385-b46d32ec7c0a', icon: CircleDot },
+    { name: 'Basquetbol', id: 'c33a2429-2647-43b7-aa52-c307b38f2274', icon: Filter },
   ];
 
   const priceRanges = [
